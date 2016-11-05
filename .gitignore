@@ -28,3 +28,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# 私が追加
+PartialDifferentialEquation/Assets/Plugins/Editor/VSCode.cs
+PartialDifferentialEquation/Assets/Plugins/Editor/VSCode.meta
+PartialDifferentialEquation/.vscode
