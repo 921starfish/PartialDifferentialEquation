@@ -31,5 +31,5 @@ sysinfo.txt
 
 # 私が追加
 Assets/Plugins/Editor/VSCode.cs
-Assets/Plugins/Editor/VSCode.meta
+Assets/Plugins/Editor/VSCode.cs.meta
 .vscode
