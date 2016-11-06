@@ -6,13 +6,14 @@ public class PDE : MonoBehaviour
 
     static double[,,] log;
     public bool isDiscrete = false;
-    int count, height, width;
+    int count, height, width, tatehi, yokohi;
     float X, Y, W, H;
     public GameObject Rectangle;
     public GameObject[,] Rects;
     [Range(0, 50)]
     public int Zikoku = 0;
     private float timeleft = 5;
+
 
     // Use this for initialization
     void Start()
@@ -23,8 +24,9 @@ public class PDE : MonoBehaviour
         double kappa = 0.0023473150395; // 鉄の熱伝達係数 m^2/s
         double lambda = kappa * dt / dx / dx;
         Debug.Log(" alpha = " + lambda);
-        height = (int)(0.6 / dx) + 1; // 格子点の数 (長さ60cm)
-        width = (int)(0.4 / dx) + 1; // 格子点の数 (幅40cm)
+        tatehi = 6; yokohi = 4;
+        height = (int)((tatehi / 10d) / dx) + 1; // 格子点の数 (長さ60cm)
+        width = (int)((yokohi / 10d) / dx) + 1; // 格子点の数 (幅40cm)
         int m = 50000; // 時間格子の数
         double[,] T = new double[height, width];
         double[,] TT = new double[height, width];
@@ -136,8 +138,8 @@ public class PDE : MonoBehaviour
     {
         X = 0;
         Y = 0;
-        W = width;
-        H = height;
+        H = tatehi * 1 + 0.1f;
+        W = yokohi * 1 + 0.1f;
 
         Rects = new GameObject[height, width];
 
