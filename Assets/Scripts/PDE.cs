@@ -11,7 +11,8 @@ public class PDE : MonoBehaviour
     public GameObject Rectangle;
     public GameObject[,] Rects;
     [Range(0, 50)]
-    public int Time = 0;
+    public int Zikoku = 0;
+    private float timeleft;
 
     // Use this for initialization
     void Start()
@@ -119,7 +120,15 @@ public class PDE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        setColorToGraph(Time);
+        timeleft -= Time.deltaTime;
+        if (timeleft <= 0.0)
+        {
+            timeleft = 1.0f;
+            if (Zikoku < 50) { Zikoku++; }
+            if (Zikoku == 50) { Zikoku = 0; }
+            setColorToGraph(Zikoku);
+        }
+
     }
 
     // グラフ描画関数
@@ -127,8 +136,8 @@ public class PDE : MonoBehaviour
     {
         X = 0;
         Y = 0;
-        W = 410;
-        H = 610;
+        W = 41;
+        H = 61;
 
         Rects = new GameObject[height, width];
 
@@ -140,7 +149,7 @@ public class PDE : MonoBehaviour
             for (int k = 0; k < log.GetLength(2); k++)
             {
                 Rects[j, k] = Instantiate(Rectangle);
-                Rects[j, k].transform.localScale = new Vector3(h, w, 0);
+                Rects[j, k].transform.localScale = new Vector3(w, h, 0);
                 Rects[j, k].transform.position += new Vector3((float)(X + w * k), (float)(Y + h * j), 0);
             }
         }
