@@ -12,7 +12,7 @@ public class PDE : MonoBehaviour
     public GameObject[,] Rects;
     [Range(0, 50)]
     public int Zikoku = 0;
-    private float timeleft;
+    private float timeleft = 5;
 
     // Use this for initialization
     void Start()
@@ -136,8 +136,8 @@ public class PDE : MonoBehaviour
     {
         X = 0;
         Y = 0;
-        W = 41;
-        H = 61;
+        W = width;
+        H = height;
 
         Rects = new GameObject[height, width];
 
