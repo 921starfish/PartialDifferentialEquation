@@ -231,5 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDiscrete: 1
+  tatehi: 7
+  yokohi: 7
   Rectangle: {fileID: 1000010478670152, guid: 9633b6dafd49d42f8b6cda6df9d4ec47, type: 2}
   Zikoku: 0
